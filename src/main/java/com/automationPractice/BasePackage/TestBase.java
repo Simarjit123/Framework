@@ -31,7 +31,7 @@ public class TestBase {
 		}
 	}
 
-	public void intialsation() {
+	public void initialization() {
 		String browserName = prop.getProperty("browser");
 
 		switch (browserName) {

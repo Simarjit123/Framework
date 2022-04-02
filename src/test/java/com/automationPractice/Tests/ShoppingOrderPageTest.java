@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.Pages.HomePage;
 import com.automationPractice.Pages.MyAccountPage;
-import com.automationPractice.Pages.OrderConfirmationSummaryPage;
+import com.automationPractice.Pages.OrderConfirmationFinalPage;
 import com.automationPractice.Pages.ShoppingOrderPage;
 import com.automationPractice.Pages.SignInPage;
 import com.automationPractice.Pages.WomenPage;
@@ -36,9 +36,9 @@ public class ShoppingOrderPageTest extends TestBase {
 
 		womenPage = myAccountPage.clickWomenbtn();
 		shoppingOrderPage = womenPage.tshirtShop();
-		UtilityClass.staticWait(5000);
+		// UtilityClass.staticWait(3000);
 		shoppingOrderPage.deleteProductFromCart();
-		UtilityClass.staticWait(5000);
+		UtilityClass.staticWait(3000);
 
 		String successfulDeletedMessage = shoppingOrderPage.getDeletedText();
 		System.out.println("Deleted message: " + successfulDeletedMessage);

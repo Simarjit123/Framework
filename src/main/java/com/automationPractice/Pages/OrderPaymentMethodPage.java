@@ -15,6 +15,7 @@ public class OrderPaymentMethodPage extends TestBase {
 	WebElement payByBank;
 
 	public PaymentSummaryPage paymentMethod() {
+		payByBank.click();
 		return new PaymentSummaryPage();
 
 	}

@@ -17,8 +17,9 @@ public class BillingAddressPage extends TestBase {
 	@FindBy(css = "button.btn.btn-default.button-medium")
 	WebElement proceedToCheckOutButton;
 
-	public void enterMessage(String sendMessage) {
+	public ShippingPage enterMessage(String sendMessage) {
 		sendMessageText.sendKeys(sendMessage);
+		return null;
 	}
 
 	public ShippingPage proceedToCheckoutClick() {

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
 
+
 public class ShippingPage extends TestBase {
 	public ShippingPage() {
 		PageFactory.initElements(wd, this);

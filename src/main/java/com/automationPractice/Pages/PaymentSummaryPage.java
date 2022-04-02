@@ -14,8 +14,8 @@ public class PaymentSummaryPage extends TestBase {
 	@FindBy(css = "button.button.btn.btn-default.button-medium")
 	WebElement confirmOrderSubmitBtn;
 
-	public OrderConfirmationSummaryPage clickConfirm() {
+	public OrderConfirmationFinalPage clickConfirm() {
 		confirmOrderSubmitBtn.click();
-		return new OrderConfirmationSummaryPage();
+		return new OrderConfirmationFinalPage();
 	}
 }

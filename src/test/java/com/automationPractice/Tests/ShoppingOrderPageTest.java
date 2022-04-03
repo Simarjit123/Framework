@@ -1,5 +1,7 @@
 package com.automationPractice.Tests;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +14,7 @@ import com.automationPractice.Pages.OrderConfirmationFinalPage;
 import com.automationPractice.Pages.ShoppingOrderPage;
 import com.automationPractice.Pages.SignInPage;
 import com.automationPractice.Pages.WomenPage;
-import com.automationPractice.Util.UtilityClass;
+import com.automationPractice.Utils.Utils;
 
 public class ShoppingOrderPageTest extends TestBase {
 	HomePage homepage;
@@ -38,7 +40,8 @@ public class ShoppingOrderPageTest extends TestBase {
 		shoppingOrderPage = womenPage.tshirtShop();
 		// UtilityClass.staticWait(3000);
 		shoppingOrderPage.deleteProductFromCart();
-		UtilityClass.staticWait(3000);
+
+		Utils.staticWait(2000);
 
 		String successfulDeletedMessage = shoppingOrderPage.getDeletedText();
 		System.out.println("Deleted message: " + successfulDeletedMessage);
@@ -48,6 +51,6 @@ public class ShoppingOrderPageTest extends TestBase {
 
 	@AfterMethod
 	public void closeBrowser() {
-		tearDown();
+//		tearDown();
 	}
 }

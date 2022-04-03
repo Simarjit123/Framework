@@ -21,7 +21,7 @@ public class Utils extends TestBase {
 
 		String email = RandomStringUtils.randomNumeric(3);
 
-		String emailID = "Manvir" + email + "@gmail.com";
+		String emailID = "simar" + email + "@gmail.com";
 
 		return emailID;
 

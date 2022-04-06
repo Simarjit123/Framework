@@ -8,7 +8,7 @@ import com.automationPractice.BasePackage.TestBase;
 public class RetryFailedTestCases extends TestBase implements IRetryAnalyzer {
 
 	int counter = 1; // Intial value
-	int maxCount = 3; // maximum retry count
+	int maxCount = 2; // maximum retry count
 
 	@Override
 	public boolean retry(ITestResult result) {

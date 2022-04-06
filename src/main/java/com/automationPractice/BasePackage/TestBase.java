@@ -10,15 +10,20 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 
 import com.automationPractice.Logger.WebdriverEvents;
 import com.automationPractice.Utils.Utils;
+import com.google.gson.annotations.Until;
 import com.google.j2objc.annotations.ReflectionSupport.Level;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -31,6 +36,7 @@ public class TestBase {
 	public static Logger logger;
 	public EventFiringWebDriver e_driver;
 	public WebdriverEvents eventListner;
+	public static JavascriptExecutor jse;
 
 	public TestBase() {
 		try {
@@ -83,7 +89,7 @@ public class TestBase {
 		wd = e_driver;
 
 		wd.manage().window().maximize();
-		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
+//		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		wd.manage().timeouts().pageLoadTimeout(Utils.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 
 		// Load the Page
@@ -95,4 +101,20 @@ public class TestBase {
 		wd.quit();
 	}
 
+	public void waitForDocumentCompleteState(int timeOutInSeconds) {
+		new WebDriverWait(wd, 15).until((ExpectedCondition<Boolean>) v -> {
+			logger.info("Verifying page has loaded......");
+			jse = (JavascriptExecutor) wd;
+			String documentIsReady = jse.executeScript("return document.readyState").toString();
+			while (true) {
+				if (documentIsReady.equalsIgnoreCase("complete")) {
+					logger.info("Page has loaded completely......");
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+		});
+	}
 }

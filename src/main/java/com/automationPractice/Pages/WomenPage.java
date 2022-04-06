@@ -7,11 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class WomenPage extends TestBase {
 	public WomenPage() {
 
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	// tshirt selection click
@@ -31,41 +33,51 @@ public class WomenPage extends TestBase {
 	WebElement addToCart;
 
 	// proceed to checkout
-	@FindBy(css = "a[class='btn btn-default button button-medium']")
+	@FindBy(xpath = "//a[@title='Proceed to checkout']")
+	// a[@title='Proceed to checkout']
+//FindBy(css = "a[class='btn btn-default button button-medium']")
 	WebElement proceedCheckoutBtn;
 
-	public void clickOnItem() {
-		fadedtshirt.click();
+	public void selectItem() {
+		Utils.clickOnElement(fadedtshirt);
 
 	}
 
-	public void quantityAdd() {
+	@FindBy(className = "fancybox-iframe")
+	WebElement switchIframe;
+
+	public void switchToIframe() {
+		Utils.switchToFrame(switchIframe);
+	}
+
+	public void quantityAdd(String quantity) {
 		addQuantity.clear();
-		addQuantity.sendKeys("2");
-		// addQuantity.click();
+		Utils.sendData(addQuantity, quantity);
 	}
 
-	public void sizeSelection() {
-		Select sizeSelect = new Select(selectSize);
-		sizeSelect.selectByValue("3");
+	public void sizeSelection(String size) {
+		Utils.selectFromDropDownUsingVisibleText(selectSize, size);
+
 	}
 
 	public void addCart() {
-		addToCart.click();
+		Utils.clickOnElement(addToCart);
 	}
 
 	public ShoppingOrderPage clickProceedToCheckout() {
-		proceedCheckoutBtn.click();
+		Utils.clickOnElement(proceedCheckoutBtn);
 		return new ShoppingOrderPage();
 	}
 
-	public ShoppingOrderPage tshirtShop() {
+	public ShoppingOrderPage tshirtShop(String quantity, String size) {
 
-		clickOnItem();
-		wd.switchTo().frame(0);
-		quantityAdd();
-		sizeSelection();
-		addCart();
+		Utils.clickOnElement(fadedtshirt);
+
+		Utils.switchToFrame(switchIframe);
+
+		Utils.sendData(addQuantity, quantity);
+		Utils.selectFromDropDownUsingVisibleText(selectSize, size);
+		Utils.clickOnElement(addToCart);
 		wd.switchTo().defaultContent();
 		return clickProceedToCheckout();
 

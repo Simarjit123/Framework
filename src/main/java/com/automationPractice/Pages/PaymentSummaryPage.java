@@ -9,6 +9,7 @@ import com.automationPractice.BasePackage.TestBase;
 public class PaymentSummaryPage extends TestBase {
 	public PaymentSummaryPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "button.button.btn.btn-default.button-medium")

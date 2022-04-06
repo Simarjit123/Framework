@@ -10,6 +10,7 @@ public class OrderConfirmationFinalPage extends TestBase {
 	public OrderConfirmationFinalPage() {
 
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(className = "cheque-indent")

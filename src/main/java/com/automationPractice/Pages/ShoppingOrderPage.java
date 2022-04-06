@@ -15,6 +15,7 @@ public class ShoppingOrderPage extends TestBase {
 
 	public ShoppingOrderPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "i.icon-trash")
@@ -31,6 +32,7 @@ public class ShoppingOrderPage extends TestBase {
 	}
 
 	public ShoppingOrderPage deleteProductFromCart() {
+
 		productDeleteButton.click();
 		return new ShoppingOrderPage();
 	}

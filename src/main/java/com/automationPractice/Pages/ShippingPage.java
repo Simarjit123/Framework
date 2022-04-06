@@ -10,6 +10,7 @@ import com.automationPractice.BasePackage.TestBase;
 public class ShippingPage extends TestBase {
 	public ShippingPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "#cgv")

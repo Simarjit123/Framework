@@ -9,6 +9,7 @@ import com.automationPractice.BasePackage.TestBase;
 public class BillingAddressPage extends TestBase {
 	public BillingAddressPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "textarea[name='message']")

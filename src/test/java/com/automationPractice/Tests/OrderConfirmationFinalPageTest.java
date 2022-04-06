@@ -46,7 +46,7 @@ public class OrderConfirmationFinalPageTest extends TestBase {
 	@Test
 	public void verifyUserCanCompleteOrder() {
 		womenPage = myAccountPage.clickWomenbtn();
-		shoppingOrderPage = womenPage.tshirtShop();
+		shoppingOrderPage = womenPage.tshirtShop(prop.getProperty("quantity"), prop.getProperty("size"));
 		billingAddressPage = shoppingOrderPage.proceedToCheckOut();
 		shippingPge = billingAddressPage.proceedToCheckoutClick();
 		shippingPge.checkBoxSelection();

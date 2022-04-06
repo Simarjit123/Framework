@@ -9,6 +9,7 @@ import com.automationPractice.BasePackage.TestBase;
 public class OrderPaymentMethodPage extends TestBase {
 	public OrderPaymentMethodPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = ".bankwire")

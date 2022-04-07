@@ -23,9 +23,6 @@ public class MyAccountPageTest extends TestBase {
 	public void setUp() {
 		initialization();
 
-		/*
-		 * homepage = new HomePage(); signinPage = new SignInPage();
-		 */
 		homepage = new HomePage();
 		signinPage = homepage.clickSignInBtn();
 		signinPage.enterEmail(prop.getProperty("email"));
@@ -38,7 +35,12 @@ public class MyAccountPageTest extends TestBase {
 		// Asserting customer name at Account page
 		sassert = new SoftAssert();
 		sassert.assertEquals(myAccountPage.customerLoginName(), prop.getProperty("customerName"), "name doesn't match");
-		// Logut button click
+
+		// Logout button click
+		myAccountPage.clickAddress();
+		sassert.assertEquals(prop.getProperty("cityText"), "city name doesn't matches");
+		sassert.assertEquals(myAccountPage.getCitytext(), prop.getProperty("cityNameText"), "city name not matches");
+//sassert.assertAll();
 		myAccountPage.logoutBtnClick();
 	}
 

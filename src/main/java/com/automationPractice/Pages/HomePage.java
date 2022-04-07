@@ -23,6 +23,6 @@ public class HomePage extends TestBase {
 	public SignInPage clickSignInBtn() {
 		Utils.clickOnElement(signInBtn);
 		return new SignInPage();
-
 	}
+
 }

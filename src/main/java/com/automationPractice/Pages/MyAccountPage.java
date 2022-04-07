@@ -19,8 +19,13 @@ public class MyAccountPage extends TestBase {
 	@FindBy(css = "a[title='View my customer account']")
 	WebElement customerName;
 
-	@FindBy(css = ".sf-with-ul")
+	@FindBy(css = "a[title='Addresses']")
+	WebElement addressBtn;
 
+	@FindBy(css = ".address_address1")
+	WebElement cityNameText;
+
+	@FindBy(css = ".sf-with-ul")
 	WebElement womenBtnClick;
 
 	@FindBy(css = ".logout")
@@ -28,6 +33,14 @@ public class MyAccountPage extends TestBase {
 
 	public String customerLoginName() {
 		return Utils.getTextFromWebelement(customerName);
+	}
+
+	public void clickAddress() {
+		Utils.clickOnElement(addressBtn);
+	}
+
+	public String getCitytext() {
+		return Utils.getTextFromWebelement(cityNameText);
 	}
 
 	public WomenPage clickWomenbtn() {

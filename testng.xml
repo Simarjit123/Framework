@@ -11,9 +11,10 @@
 
 	<test thread-count="5" name="Test">
 		<classes>
+			<class name="com.automationPractice.Tests.MyAccountPageTest" />
 			<class name="com.automationPractice.Tests.OrderConfirmationFinalPageTest" />
 			<class name="com.automationPractice.Tests.ShoppingOrderPageTest" />
-			<class name="com.automationPractice.Tests.MyAccountPageTest" />
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

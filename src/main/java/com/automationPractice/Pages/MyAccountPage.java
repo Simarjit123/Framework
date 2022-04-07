@@ -52,4 +52,13 @@ public class MyAccountPage extends TestBase {
 		Utils.clickOnElement(accountLogut);
 
 	}
+
+	@FindBy(css = "#social_block")
+	WebElement followUsLink;
+
+	public FollowUsSocialMediaPage moveTofollowUs() {
+		Utils.scrollIntoViewUsingJavascript(followUsLink);
+		return new FollowUsSocialMediaPage();
+	}
+
 }

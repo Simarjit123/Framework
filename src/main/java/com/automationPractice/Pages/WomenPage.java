@@ -52,10 +52,12 @@ public class WomenPage extends TestBase {
 
 	public void quantityAdd(String quantity) {
 		addQuantity.clear();
+
 		Utils.sendData(addQuantity, quantity);
 	}
 
 	public void sizeSelection(String size) {
+
 		Utils.selectFromDropDownUsingVisibleText(selectSize, size);
 
 	}
@@ -72,7 +74,7 @@ public class WomenPage extends TestBase {
 	public ShoppingOrderPage tshirtShop(String quantity, String size) {
 
 		Utils.clickOnElement(fadedtshirt);
-
+	
 		Utils.switchToFrame(switchIframe);
 
 		Utils.sendData(addQuantity, quantity);

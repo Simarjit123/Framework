@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class ShoppingOrderPage extends TestBase {
 
@@ -32,8 +33,8 @@ public class ShoppingOrderPage extends TestBase {
 	}
 
 	public ShoppingOrderPage deleteProductFromCart() {
+		Utils.clickOnElement(productDeleteButton);
 
-		productDeleteButton.click();
 		return new ShoppingOrderPage();
 	}
 
@@ -45,7 +46,7 @@ public class ShoppingOrderPage extends TestBase {
 	}
 
 	public BillingAddressPage proceedToCheckOut() {
-		proceedToCheckOutButton.click();
+		Utils.javascriptClick(proceedToCheckOutButton);
 		return new BillingAddressPage();
 	}
 }

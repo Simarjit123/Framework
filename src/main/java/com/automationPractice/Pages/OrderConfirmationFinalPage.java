@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class OrderConfirmationFinalPage extends TestBase {
 	public OrderConfirmationFinalPage() {
@@ -19,4 +20,5 @@ public class OrderConfirmationFinalPage extends TestBase {
 	public String getOrderConfirmation() {
 		return orderConfirmationSummary.getText();
 	}
+
 }

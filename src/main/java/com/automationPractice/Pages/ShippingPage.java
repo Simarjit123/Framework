@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
-
+import com.automationPractice.Utils.Utils;
 
 public class ShippingPage extends TestBase {
 	public ShippingPage() {
@@ -25,7 +25,7 @@ public class ShippingPage extends TestBase {
 	}
 
 	public OrderPaymentMethodPage proceedToPaymentShipping() {
-		shippingProceedToCheckout.click();
+		Utils.clickOnElement(shippingProceedToCheckout);
 		return new OrderPaymentMethodPage();
 	}
 

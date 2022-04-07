@@ -8,14 +8,5 @@ import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.Pages.HomePage;
 
 public class HomePageTest extends TestBase {
-	HomePage homepage;;
-
-	SoftAssert sassert;
-
-	@BeforeMethod
-	public void setUp() {
-		homepage = new HomePage();
-		initialization();
-	}
 
 }

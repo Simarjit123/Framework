@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class BillingAddressPage extends TestBase {
 	public BillingAddressPage() {
@@ -19,12 +20,14 @@ public class BillingAddressPage extends TestBase {
 	WebElement proceedToCheckOutButton;
 
 	public ShippingPage enterMessage(String sendMessage) {
-		sendMessageText.sendKeys(sendMessage);
+		Utils.sendData(sendMessageText, sendMessage);
+
 		return null;
 	}
 
 	public ShippingPage proceedToCheckoutClick() {
-		proceedToCheckOutButton.click();
+		Utils.clickOnElement(proceedToCheckOutButton);
+		
 		return new ShippingPage();
 	}
 }

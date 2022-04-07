@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class PaymentSummaryPage extends TestBase {
 	public PaymentSummaryPage() {
@@ -16,7 +17,7 @@ public class PaymentSummaryPage extends TestBase {
 	WebElement confirmOrderSubmitBtn;
 
 	public OrderConfirmationFinalPage clickConfirm() {
-		confirmOrderSubmitBtn.click();
+		Utils.clickOnElement(confirmOrderSubmitBtn);
 		return new OrderConfirmationFinalPage();
 	}
 }

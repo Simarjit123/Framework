@@ -116,6 +116,16 @@ public class Utils extends TestBase {
 
 	}
 
+	public static void scrollIntoViewUsingJavascript(WebElement webElement) {
+		jse.executeScript("arguments[0].scrollIntoView(true);", webElement);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public static void moveToElement(WebElement element) {
 		Actions actions = new Actions(wd);
 		actions.moveToElement(element).build().perform();
@@ -159,10 +169,6 @@ public class Utils extends TestBase {
 
 	public static void javascriptClick(WebElement element) {
 		jse.executeScript("arguments[0].click();", element);
-	}
-
-	public static void scrollIntoViewUsingJavascript(WebElement element) {
-		jse.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 }

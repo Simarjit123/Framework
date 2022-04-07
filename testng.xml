@@ -14,6 +14,9 @@
 			<class name="com.automationPractice.Tests.MyAccountPageTest" />
 			<class name="com.automationPractice.Tests.OrderConfirmationFinalPageTest" />
 			<class name="com.automationPractice.Tests.ShoppingOrderPageTest" />
+			<class name="com.automationPractice.Tests.SearchItemPageTest" />
+			<class name="com.automationPractice.Tests.FollowUsOnSocialMediaPageTest" />
+
 
 		</classes>
 	</test> <!-- Test -->

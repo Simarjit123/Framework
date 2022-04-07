@@ -20,9 +20,21 @@ public class HomePage extends TestBase {
 	@FindBy(css = ".header_user_info")
 	WebElement signInBtn;
 
+	@FindBy(css = "#search_query_top")
+	WebElement searchBox;
+
+	@FindBy(css = "button[name='submit_search']")
+	WebElement searchBtn;
+
 	public SignInPage clickSignInBtn() {
 		Utils.clickOnElement(signInBtn);
 		return new SignInPage();
+	}
+
+	public SearchItemPage searchProduct(String itemSearch) {
+		Utils.sendData(searchBox, itemSearch);
+		Utils.clickOnElement(searchBtn);
+		return new SearchItemPage();
 	}
 
 }

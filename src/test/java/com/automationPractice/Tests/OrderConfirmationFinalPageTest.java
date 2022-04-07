@@ -1,6 +1,5 @@
 package com.automationPractice.Tests;
 
-import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,6 +11,7 @@ import com.automationPractice.Pages.BillingAddressPage;
 import com.automationPractice.Pages.HomePage;
 import com.automationPractice.Pages.MyAccountPage;
 import com.automationPractice.Pages.OrderConfirmationFinalPage;
+
 import com.automationPractice.Pages.OrderPaymentMethodPage;
 import com.automationPractice.Pages.PaymentSummaryPage;
 import com.automationPractice.Pages.ShippingPage;
